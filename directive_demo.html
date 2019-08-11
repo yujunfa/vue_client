@@ -17,14 +17,15 @@
 
 <script>
     Vue.directive('my-directive', {
-        bind: function() {
+        bind: function(el, name, vm, expression, arg, modifiers) {
+            console.log(el);
             console.log('~~~~~~~~bind~~~~~~~~');
-            console.log('el', this.el);
-            console.log('name', this.name);
-            console.log('vm', this.vm);
-            console.log('expression', this.expression);
-            console.log('arg', this.arg);
-            console.log('modifiers', this.modifiers);
+            console.log('el', el);
+            console.log('name', name);
+            console.log('vm', vm);
+            console.log('expression', expression);
+            console.log('arg', arg);
+            console.log('modifiers', modifiers);
         },
         update: function(newValue, oldValue) {
             var keys = Object.keys(this.modifiers);
